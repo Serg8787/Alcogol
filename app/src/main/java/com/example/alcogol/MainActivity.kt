@@ -2,10 +2,8 @@ package com.example.alcogol
 
 import android.media.MediaPlayer
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import java.security.SecureRandom
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -31,6 +29,11 @@ class MainActivity : AppCompatActivity() {
         toastList.add(Tost("Тост 10"))
         toastList.add(Tost("Тост 11"))
 
+        val words = listOf(
+            "Tost1", "Tost2", "Tost3", "Tost4", "Tost5",
+            "Tost6", "Tost7"  )
+        Collections.shuffle(words);
+
 
 
 
@@ -38,9 +41,14 @@ class MainActivity : AppCompatActivity() {
 //          Рабоатает, позже включим звук
 //            goMusic()
  //  Работает не по кругу
-//            val randomElement:Tost = toastList.random()
-//            val name = randomElement.descTost
-//            tvTost.text = name
+            val randomElement:Tost = toastList.random()
+            toastList.remove(randomElement)
+            if (!toastList.contains(randomElement)){
+                val name = randomElement.descTost
+                tvTost.text = name
+            }
+
+
 
 
         }
