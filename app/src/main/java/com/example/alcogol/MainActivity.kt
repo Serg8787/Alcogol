@@ -15,8 +15,7 @@ class MainActivity : AppCompatActivity() {
         val toastList = ArrayList<Tost>()
         btNewTost.setOnClickListener {
 
-//          Рабоатает, позже включим звук
-//            goMusic()
+             playMusic()
             if (toastList.isEmpty()) {
                 toastList.add(Tost(getString(R.string.t1)))
                 toastList.add(Tost(getString(R.string.t2)))
@@ -54,7 +53,6 @@ class MainActivity : AppCompatActivity() {
             val name = randomElement.descTost
             tvTost.text = name
             toastList.remove(randomElement)
-
 
             setColorBackground()
             setColorToast()
