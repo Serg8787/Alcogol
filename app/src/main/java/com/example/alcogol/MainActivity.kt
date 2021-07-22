@@ -13,48 +13,52 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        val myArray = arrayOf(1, 2, 3, 4, 5, "зайчик", "вышел", "погулять")
-        tvTost.text = myArray[1].toString()
         val toastList  = ArrayList<Tost>()
-        toastList.add(Tost("Тост 1"))
-        toastList.add(Tost("Тост 2"))
-        toastList.add(Tost("Тост 3"))
-        toastList.add(Tost("Тост 4"))
-        toastList.add(Tost("Тост 5"))
-        toastList.add(Tost("Тост 6"))
-        toastList.add(Tost("Тост 7"))
-        toastList.add(Tost("Тост 8"))
-        toastList.add(Tost("Tост 9"))
-        toastList.add(Tost("Тост 10"))
-        toastList.add(Tost("Тост 11"))
-
-        val words = listOf(
-            "Tost1", "Tost2", "Tost3", "Tost4", "Tost5",
-            "Tost6", "Tost7"  )
-        Collections.shuffle(words);
-
-
-
-
         btNewTost.setOnClickListener {
 //          Рабоатает, позже включим звук
 //            goMusic()
- //  Работает не по кругу
+            if(toastList.isEmpty()){
+                toastList.add(Tost(getString(R.string.t1)))
+                toastList.add(Tost(getString(R.string.t2)))
+                toastList.add(Tost(getString(R.string.t3)))
+                toastList.add(Tost(getString(R.string.t4)))
+                toastList.add(Tost(getString(R.string.t5)))
+                toastList.add(Tost(getString(R.string.t6)))
+                toastList.add(Tost(getString(R.string.t7)))
+                toastList.add(Tost(getString(R.string.t8)))
+                toastList.add(Tost(getString(R.string.t9)))
+                toastList.add(Tost(getString(R.string.t10)))
+                toastList.add(Tost(getString(R.string.t11)))
+                toastList.add(Tost(getString(R.string.t12)))
+                toastList.add(Tost(getString(R.string.t13)))
+                toastList.add(Tost(getString(R.string.t14)))
+                toastList.add(Tost(getString(R.string.t15)))
+                toastList.add(Tost(getString(R.string.t16)))
+                toastList.add(Tost(getString(R.string.t17)))
+                toastList.add(Tost(getString(R.string.t18)))
+                toastList.add(Tost(getString(R.string.t19)))
+                toastList.add(Tost(getString(R.string.t20)))
+                toastList.add(Tost(getString(R.string.t21)))
+                toastList.add(Tost(getString(R.string.t22)))
+                toastList.add(Tost(getString(R.string.t23)))
+                toastList.add(Tost(getString(R.string.t24)))
+                toastList.add(Tost(getString(R.string.t25)))
+                toastList.add(Tost(getString(R.string.t26)))
+                toastList.add(Tost(getString(R.string.t27)))
+                toastList.add(Tost(getString(R.string.t28)))
+                toastList.add(Tost(getString(R.string.t29)))
+                toastList.add(Tost(getString(R.string.t30)))
+            }
             val randomElement:Tost = toastList.random()
             toastList.remove(randomElement)
             if (!toastList.contains(randomElement)){
                 val name = randomElement.descTost
                 tvTost.text = name
             }
-
-
-
-
         }
     }
 
-    private fun goMusic(){
+    private fun playMusic(){
         val mPlayer= MediaPlayer.create(this, R.raw.zvyakane_bokalov);
         mPlayer.start()
     }
