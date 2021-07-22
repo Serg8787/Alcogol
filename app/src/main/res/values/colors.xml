@@ -9,5 +9,10 @@
     <color name="red">#D50000</color>
     <color name="purple">#AA00FF</color>
     <color name="lite_green">#AEEA00</color>
+    <color name="ff">#6200EA</color>
+    <color name="gg">#00C853</color>
+    <color name="yy">#9AFFD600</color>
+    <color name="bb">#C51162</color>
+    <color name="blue">#2350CD</color>
     <color name="orange">#FF6D00</color>
 </resources>

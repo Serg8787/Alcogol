@@ -1,5 +1,6 @@
 package com.example.alcogol
 
+import android.annotation.SuppressLint
 import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -12,9 +13,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportActionBar?.hide()
 
         val toastList  = ArrayList<Tost>()
         btNewTost.setOnClickListener {
+            setBackground()
 //          Рабоатает, позже включим звук
 //            goMusic()
             if(toastList.isEmpty()){
@@ -61,5 +64,22 @@ class MainActivity : AppCompatActivity() {
     private fun playMusic(){
         val mPlayer= MediaPlayer.create(this, R.raw.zvyakane_bokalov);
         mPlayer.start()
+    }
+
+    private fun setBackground(){
+        val colorsBack = ArrayList<Int>()
+        colorsBack.add(resources.getColor(R.color.orange))
+        colorsBack.add(resources.getColor(R.color.red))
+        colorsBack.add(resources.getColor(R.color.purple))
+        colorsBack.add(resources.getColor(R.color.lite_green))
+        colorsBack.add(resources.getColor(R.color.purple_500))
+        colorsBack.add(resources.getColor(R.color.purple_700))
+        colorsBack.add(resources.getColor(R.color.purple_200))
+        colorsBack.add(resources.getColor(R.color.bb))
+        colorsBack.add(resources.getColor(R.color.gg))
+        colorsBack.add(resources.getColor(R.color.yy))
+        colorsBack.add(resources.getColor(R.color.ff))
+        val randomElement= colorsBack.random()
+        mainActivty.setBackgroundColor(randomElement)
     }
 }
