@@ -1,12 +1,9 @@
 package com.example.alcogol
 
-import android.annotation.SuppressLint
 import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
-import kotlin.collections.ArrayList
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,12 +12,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
 
-        val toastList  = ArrayList<Tost>()
+        val toastList = ArrayList<Tost>()
         btNewTost.setOnClickListener {
-            setBackground()
+
 //          Рабоатает, позже включим звук
 //            goMusic()
-            if(toastList.isEmpty()){
+            if (toastList.isEmpty()) {
                 toastList.add(Tost(getString(R.string.t1)))
                 toastList.add(Tost(getString(R.string.t2)))
                 toastList.add(Tost(getString(R.string.t3)))
@@ -51,22 +48,26 @@ class MainActivity : AppCompatActivity() {
                 toastList.add(Tost(getString(R.string.t28)))
                 toastList.add(Tost(getString(R.string.t29)))
                 toastList.add(Tost(getString(R.string.t30)))
+
             }
-            val randomElement:Tost = toastList.random()
+            val randomElement: Tost = toastList.random()
+            val name = randomElement.descTost
+            tvTost.text = name
             toastList.remove(randomElement)
-            if (!toastList.contains(randomElement)){
-                val name = randomElement.descTost
-                tvTost.text = name
-            }
+
+
+            setColorBackground()
+            setColorToast()
+
         }
     }
 
-    private fun playMusic(){
-        val mPlayer= MediaPlayer.create(this, R.raw.zvyakane_bokalov);
+    private fun playMusic() {
+        val mPlayer = MediaPlayer.create(this, R.raw.zvyakane_bokalov);
         mPlayer.start()
     }
 
-    private fun setBackground(){
+    private fun setColorBackground() {
         val colorsBack = ArrayList<Int>()
         colorsBack.add(resources.getColor(R.color.orange))
         colorsBack.add(resources.getColor(R.color.red))
@@ -79,7 +80,21 @@ class MainActivity : AppCompatActivity() {
         colorsBack.add(resources.getColor(R.color.gg))
         colorsBack.add(resources.getColor(R.color.yy))
         colorsBack.add(resources.getColor(R.color.ff))
-        val randomElement= colorsBack.random()
+        val randomElement = colorsBack.random()
         mainActivty.setBackgroundColor(randomElement)
     }
+
+    private fun setColorToast() {
+        val colorsTextToast = ArrayList<Int>()
+        colorsTextToast.add(resources.getColor(R.color.white))
+        colorsTextToast.add(resources.getColor(R.color.white2))
+        colorsTextToast.add(resources.getColor(R.color.white3))
+        colorsTextToast.add(resources.getColor(R.color.white4))
+        colorsTextToast.add(resources.getColor(R.color.white5))
+        colorsTextToast.add(resources.getColor(R.color.white6))
+        val random = colorsTextToast.random()
+        tvTost.setTextColor(random)
+
+    }
+
 }

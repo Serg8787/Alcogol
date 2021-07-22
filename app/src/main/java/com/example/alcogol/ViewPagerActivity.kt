@@ -9,11 +9,12 @@ class ViewPagerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_pager)
+        supportActionBar?.hide()
 
         val pages = arrayListOf<Pages>(
-            Pages("Просто нажмите на кнопку"),
-            Pages("Алкоголь вреден"),
-            Pages("Последний текст")
+            Pages("Находясь в здравом уме и твёрдой памяти, мы решили выпить и всё забыть."),
+            Pages("Жизнь прекрасна и удивительна, если выпить предварительно !"),
+            Pages("Нажимая НАЧНЕМ вы потдверждаете, что являетесь совершеннолетним !!!")
         )
         viewPager.adapter = PagesAdapter(pages, supportFragmentManager)
     }

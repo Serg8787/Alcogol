@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.fragment_1.*
 import kotlinx.android.synthetic.main.fragment_3.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -38,6 +40,10 @@ class Fragment3 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         tvFrag3.text = title
+        Glide
+            .with(this)
+            .load(R.drawable.icons8_al3_unscreen)
+            .into(ivFrag3);
         btFrag3.setOnClickListener {
             val int = Intent(context, MainActivity::class.java)
             startActivity(int)

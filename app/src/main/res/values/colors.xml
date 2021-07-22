@@ -14,5 +14,11 @@
     <color name="yy">#9AFFD600</color>
     <color name="bb">#C51162</color>
     <color name="blue">#2350CD</color>
+    <color name="white">#995C4A3C</color>
+    <color name="white2">#F7CFC2C4</color>
+    <color name="white3">#9C9590</color>
+    <color name="white4">#83776F</color>
+    <color name="white5">#7A746F</color>
+    <color name="white6">#DAB499</color>
     <color name="orange">#FF6D00</color>
 </resources>
